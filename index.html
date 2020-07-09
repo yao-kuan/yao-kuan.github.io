@@ -185,7 +185,7 @@
         <div class="row featurette mb-5">
           <div class="col-md-7" >
             <h4 class="featurette-heading" >Centerline extraction-<span class="text-muted">3D CNN</span></h4>
-            <p class="lead">The algorithm treats an image as a topological surface where the pixel intensity corresponds to the area height. It then identifies the edge of the cell as the watershed separating neighboring drainage basins. The limit of watershed algorithm grows based on the background intensity. Each cell need a individual seed which is selected by a lower threshold. Outer boundaries of cells are set by a higher threshold.</p>         
+            <p class="lead">Coronary artery centerline extraction is a preliminary step before stenosis and plaque detection. In this project, the centerline is tracking by a 3D convolutional neural network (CNN) proposed by Wolterink. The 3D CNN directional classifier predicts the most likely directions and radius of centerline at the local image patch. Then, the whole centerline is extracted by tracking along the predicted direction.</p>         
           </div>
           <div class="col-md-5">
             <img class="img-thumbnail" src="img/centerline.png" width="300" height="300">
@@ -194,8 +194,8 @@
         
         <div class="row featurette mb-5">
           <div class="col-md-7" >
-            <h4 class="featurette-heading" >CCTA-CAG registration</h4>
-            <p class="lead">The algorithm treats an image as a topological surface where the pixel intensity corresponds to the area height. It then identifies the edge of the cell as the watershed separating neighboring drainage basins. The limit of watershed algorithm grows based on the background intensity. Each cell need a individual seed which is selected by a lower threshold. Outer boundaries of cells are set by a higher threshold.</p>         
+            <h4 class="featurette-heading" >3D/2D CCTA-CAG Registration</h4>
+            <p class="lead">Comparing lesion information in different modalities could help cardiologists to make better diagnoses. The 3D CCTA and 2D CAG centerlines at the same cardiac phase could be registrated by the optimization of the rigid transformation for 3D CCTA. This way, the error between projected CCTA and CAG centerlines is minimized. The inset figure shows the extracted centerline in 3D CCTA. After proper rigid transformation, its 2D projected centerline could be matched to CAG centerline.</p>         
           </div>
           <div class="col-md-5">
             <img class="img-thumbnail" src="img/registration.png" width="300" height="300">
@@ -335,7 +335,7 @@
         <h4>Machine Learning</h4>
         <ul>
           <li>Scikit-learn (Python package)</li>
-          <li>Keras (Python package)</li>
+          <li>Pytorch (Python package)</li>
         </ul>
 
         <h4>Simulation</h4>
