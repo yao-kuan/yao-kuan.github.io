@@ -97,15 +97,15 @@
           <h3 class="mb-0">research assistant &amp; project manager</h3>
           <div class="subheading mb-3">Coronary Artery Diseases Diagnosis Intelligent Enhancer (CADDIE), National Taiwan University, Taiwan</div>
           <p class="lead">
-            CADDIE (Coronary Artery Diseases Diagnosis Intelligent Enhancer) is a AI-powered diagnosis tool for coronary artery diseases. It is developed by a powerful international team that crosses the academic (National Taiwan University), medical (National Taiwan University Hospital) and industrial fields (NIVIDIA).
+            CADDIE is an AI-powered diagnosis tool for coronary artery diseases. It is developed by an international team that crosses the academic (National Taiwan University), medical (National Taiwan University Hospital) and industrial fields (NIVIDIA).
           </p>
           
           <h4>Role as research assistant</h4>
           <p class="lead">
             <ul>
-              <li>Coroney artery centerline extraction in coronary computed tomography angiography (CCTA)</li>
-              <li>3D coronary angiography (CAG) lumen reconstruction</li>
-              <li>3D/2D CCTA/CAG coronary artery centerline registration</li>
+              <li>Coronary artery centerline extraction in coronary computed tomography angiography (CCTA)</li>
+              <li>3D coronary lumen reconstruction from coronary angiography (CAG) </li>
+              <li>3D/2D CCTA-CAG Registration</li>
             </ul>
           </p>
 
@@ -185,7 +185,7 @@
         <div class="row featurette mb-5">
           <div class="col-md-7" >
             <h4 class="featurette-heading" >Centerline extraction-<span class="text-muted">3D CNN</span></h4>
-            <p class="lead">Coronary artery centerline extraction is a preliminary step before stenosis and plaque detection. In this project, the centerline is tracking by a 3D convolutional neural network (CNN) proposed by Wolterink. The 3D CNN directional classifier predicts the most likely directions and radius of centerline at the local image patch. Then, the whole centerline is extracted by tracking along the predicted direction.</p>         
+            <p class="lead">Coronary artery centerline extraction is a preliminary step before stenosis and plaque detection. In this project, the centerline is extracted by a 3D convolutional neural network (CNN) proposed by Wolterink. The 3D CNN directional classifier predicts the most likely directions and radius of centerline at the local image patch. Then, the whole centerline is extracted by tracking along the predicted direction.</p>         
           </div>
           <div class="col-md-5">
             <img class="img-thumbnail" src="img/centerline.png" width="300" height="300">
@@ -195,7 +195,7 @@
         <div class="row featurette mb-5">
           <div class="col-md-7" >
             <h4 class="featurette-heading" >3D/2D CCTA-CAG Registration</h4>
-            <p class="lead">Comparing lesion information in different modalities could help cardiologists to make better diagnoses. The 3D CCTA and 2D CAG centerlines at the same cardiac phase could be registrated by the optimization of the rigid transformation for 3D CCTA. This way, the error between projected CCTA and CAG centerlines is minimized. The inset figure shows the extracted centerline in 3D CCTA. After proper rigid transformation, its 2D projected centerline could be matched to CAG centerline.</p>         
+            <p class="lead">Comparing lesion information in different modalities could help cardiologists to make better diagnoses. The 3D CCTA and 2D CAG centerlines at the same cardiac phase could be registered by the optimization of the rigid transformation for 3D CCTA. This way, the error between projected CCTA and CAG centerlines is minimized. The inset figure shows the extracted centerline in 3D CCTA. After proper rigid transformation, its 2D projected centerline could be matched to CAG centerline.</p>         
           </div>
           <div class="col-md-5">
             <img class="img-thumbnail" src="img/registration.png" width="300" height="300">
@@ -204,8 +204,8 @@
 
         <div class="row featurette mb-5">
           <div class="col-md-7" >
-            <h4 class="featurette-heading" >3D CAG lumen reconstruction-<span class="text-muted">apply SLAM analysis in medical images</span></h4>
-            <p class="lead">There is a limitation of stenosis detection in CAG due to its nature of 2D projection. Thus, it is important to gain 3D information from multiple 2D CAG images. In this project, the 3D coronary centerline is reconstruted by 3D epipolar geometry. Then projected lumen points on cross-sectional planes along centerline are backprojected to 3D space. Finally, the lumen surface is reconstructed by NURBS method proposed by Galassi.   </p>         
+            <h4 class="featurette-heading" >3D CAG lumen reconstruction-<span class="text-muted">techniques for SLAM, NURBS</span></h4>
+            <p class="lead">There is a limitation of stenosis detection in CAG due to its nature of 2D projection. Thus, it is important to gain 3D information from multiple 2D CAG images. In this project, the 3D coronary centerline is reconstructed by 3D epipolar geometry. Then projected lumen points on cross-sectional planes along centerline are backprojected to 3D space. Finally, the lumen surface is reconstructed by NURBS method proposed by Galassi.   </p>         
           </div>
           <div class="col-md-5">
             <img class="img-thumbnail" src="img/reconstruction.png" width="300" height="300">
@@ -219,7 +219,7 @@
         <div class="row featurette mb-5">
           <div class="col-md-7" >
             <h4 class="featurette-heading" >Bacteria segmentation-<span class="text-muted">watershed algorithm</span></h4>
-            <p class="lead">The algorithm treats an image as a topological surface where the pixel intensity corresponds to the area height. It then identifies the edge of the cell as the watershed separating neighboring drainage basins. The limit of watershed algorithm grows based on the background intensity. Each cell need a individual seed which is selected by a lower threshold. Outer boundaries of cells are set by a higher threshold.</p>         
+            <p class="lead">The algorithm treats an image as a topological surface where the pixel intensity corresponds to the area height. It then identifies the edge of the cell as the watershed separating neighboring drainage basins. The limit of watershed algorithm grows based on the background intensity. Each cell needs an individual seed which is selected by a lower threshold. Outer boundaries of cells are set by a higher threshold.</p>         
           </div>
           <div class="col-md-5">
             <img class="img-thumbnail" src="img/watershed.png" width="300" height="300">
@@ -240,7 +240,7 @@
         <div class="row featurette mb-5">
           <div class="col-md-7" >
             <h4 class="featurette-heading" >Flat cell detection-<span class="text-muted" >HOG descriptor and SVM classifier</span></h4>
-            <p class="lead">Bacteria are adhered on the coverslip by different attachments for the  observation. However, some of the cells are not fully attached on the 2D surface, and the tilt would cause uncertainty on the following analysis. As a result, a system is developed to filter out cells which are not flat. First, segmented cells are characterized by the histogram of gradient (HOG) feature descriptor. Then, the descriptors is fed into SVM classifier. The SVM classifier is trained by 295 labeled data, and the accuracy turns out to be 0.92. The white circle points out the non flat cell which is filtered out by this work.</p>
+            <p class="lead">Bacteria are adhered on the coverslip by different attachments for the  observation. However, some of the cells are not fully attached on the 2D surface, and the tilt would cause uncertainty on the following analysis. As a result, a system is developed to filter out cells which are not flat. First, segmented cells are characterized by the histogram of gradient (HOG) feature descriptor. Then, the descriptors are fed into SVM classifier. The SVM classifier is trained by 295 labeled data, and the accuracy turns out to be 0.92. The white circle points out the non flat cell which is filtered out by this work.</p>
           </div>
           <div class="col-md-5">
             <img class="img-thumbnail" src="img/flat-detection.png" width="300" height="300">
@@ -278,7 +278,7 @@
         <div class="row featurette mb-5">
           <div class="col-md-7" >
             <h4 class="featurette-heading" >Bacteria clustering-<span class="text-muted" >DBSCAN algorithm</span></h4>
-            <p class="lead">Clusters of short bacteria collective motion are separated by this work. DBSCAN is a clustering algorithm which is based on local density and allows the existence of noise points. The cluster identification in our system is a spatio-temporal problem, self-propelled chains gather together in space, and move toward the same direction. DBSCAN plays the role of spatial clustering method. Besides, the temporal clustering is characterized by setting the maximum angle deviation of the velocity between neighbor chains as an additional criteria.</p>  
+            <p class="lead">Clusters of short bacteria collective motion are separated by this work. DBSCAN is a clustering algorithm which is based on local density and allows the existence of noise points. The cluster identification in our system is a spatio-temporal problem, self-propelled chains gather together in space, and move toward the same direction. DBSCAN plays the role of spatial clustering method. Besides, the temporal clustering is characterized by setting the maximum angle deviation of the velocity between neighbor chains as an additional criterion.</p>  
           </div>
           <div class="col-md-5">
             <img class="img-thumbnail" src="img/dbscan.png" width="300" height="300">
